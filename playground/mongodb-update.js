@@ -24,16 +24,28 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
   //   console.log(result);
   // });
 
-  client.collection('Users').findOneAndUpdate({
-    _id: new ObjectID('5aaed53b1bb6e40cd9923e0e')
-  }, {
-    $inc: {
-      age: 1
+  // client.collection('users').findOneAndUpdate({
+  //   _id: new ObjectID('5ab429c87675d7ff3327380d')
+  // }, {
+  //   $inc: {
+  //     age: 1
+  // },
+  //   $set: {
+  //     email: "hi@christopherwa.de"
+  //   }
+  // },{
+  //   returnOriginal: false
+  // }).then((result) => {
+  //   console.log(result);
+  // })
+
+
+  client.collection('users').update({
+    _id: new ObjectID('5ab429c87675d7ff3327380d')
+  },{
+    $rename: {
+      nmane: 'name'
     }
-  }, {
-    returnOriginal: false
-  }).then((result) => {
-    console.log(result);
   })
 
 
