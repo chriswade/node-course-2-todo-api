@@ -4,15 +4,9 @@ var User = mongoose.model('User', {
   email: {
     type: String,
     required: true,
-    minlength: 1,
-    trim: true
+    trim: true,
+    minlength: 1
   }
 });
 
-newUser.save().then((doc) => {
-  console.log('Saved User', doc);
-}, (e) => {
-  console.log('Unable to save User');
-});
-
-module.exports = {User};
+module.exports = {User}
