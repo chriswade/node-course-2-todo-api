@@ -44,7 +44,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     _id: new ObjectID('5ab429c87675d7ff3327380d')
   },{
     $rename: {
-      nmane: 'name'
+      Matt: 'name'
     }
   })
 
